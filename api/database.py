@@ -1,16 +1,13 @@
 import psycopg2
-from config import Config
-
-config = Config()
 
 def get_connection():
     try:
         conn = psycopg2.connect(
-            dbname=config.DB_NAME,
-            user=config.DB_USER,
-            password=config.DB_PASSWORD,
-            host=config.DB_HOST,
-            port=config.DB_PORT
+            dbname='',
+            user='',
+            password='',
+            host='',
+            port='',
         )
         return conn
     except psycopg2.Error as e:
