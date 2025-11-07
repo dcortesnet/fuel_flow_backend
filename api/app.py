@@ -6,7 +6,7 @@ from config import Config
 app = Flask(__name__)
 app.config.from_object(Config)
 
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
+CORS(app) 
 
 app.register_blueprint(pedidos_bp, url_prefix='/api')
 app.register_blueprint(auth_bp, url_prefix='/api')
