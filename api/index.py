@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_cors import CORS
 from routes import pedidos_bp, auth_bp
 from config import Config
