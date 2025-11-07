@@ -4,12 +4,12 @@ from routes import pedidos_bp, auth_bp
 from config import Config
 
 app = Flask(__name__)
-app.config.from_object(Config)
+#app.config.from_object(Config)
 
 CORS(app)
 
-app.register_blueprint(pedidos_bp, url_prefix='/api')
-app.register_blueprint(auth_bp, url_prefix='/api')
+#app.register_blueprint(pedidos_bp, url_prefix='/api')
+#app.register_blueprint(auth_bp, url_prefix='/api')
 
 print("HELLO")
 
