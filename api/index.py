@@ -11,5 +11,9 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 app.register_blueprint(pedidos_bp, url_prefix='/api')
 app.register_blueprint(auth_bp, url_prefix='/api')
 
+@app.route('/', methods=['GET'])
+def hello_world():
+    return jsonify({"message": "Hello World!"})
+
 #if __name__ == '__main__':
 #    app.run(debug=False, port=5000)
