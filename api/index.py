@@ -1,6 +1,10 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import psycopg2
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
@@ -8,15 +12,16 @@ CORS(app)
 def get_connection():
     try:
         conn = psycopg2.connect(
-            dbname='',
-            user='',
-            password='',
-            host='',
-            port='',
+            dbname=os.getenv('DB_NAME'),
+            user=os.getenv('DB_USER'),
+            password=os.getenv('DB_PASSWORD'),
+            host=os.getenv('DB_HOST'),
+            port=os.getenv('DB_PORT'),
         )
         return conn
     except psycopg2.Error as e:
-        print("Error database")
+        print(e)
+        print("Error en la base de datos")
         return None
 
 def get_tipo_combustible_id(tipo_combustible):
