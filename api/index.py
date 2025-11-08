@@ -16,6 +16,7 @@ def get_connection():
         )
         return conn
     except psycopg2.Error as e:
+        print("Error database")
         return None
 
 def get_tipo_combustible_id(tipo_combustible):
